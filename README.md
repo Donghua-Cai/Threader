@@ -4,8 +4,7 @@ Official implementation of **Beyond Memory Construction: Rethinking Memory Acces
 
 ## Paper
 
-**arXiv:** Coming soon.
-<!-- Replace the line above with: **arXiv:** [Paper](https://arxiv.org/abs/ARXIV_ID) -->
+**arXiv:** [2609.33226](https://arxiv.org/abs/2609.33226)
 
 ## Project Status
 
