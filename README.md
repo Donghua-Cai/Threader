@@ -2,9 +2,7 @@
 
 Official implementation of **Beyond Memory Construction: Rethinking Memory Access for LLM-based Conversational Agents**.
 
-## Paper
-
-**arXiv:** [2609.33226](https://arxiv.org/abs/2609.33226)
+[![arXiv](https://img.shields.io/badge/arXiv-2609.33226-b31b1b.svg)](https://arxiv.org/abs/2609.33226)
 
 ## Project Status
 
