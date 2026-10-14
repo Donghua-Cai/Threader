@@ -1,0 +1,47 @@
+embedding:
+  # sentence_transformers | huggingface_api | openai_compatible
+  backend: "sentence_transformers"
+  model_name: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  dim_fallback: 384
+  batch_size: 64
+  api_url: ""
+  api_token_env: ""
+  api_timeout_sec: 60.0
+
+router:
+  final_topk: 12
+  segment_sim_topk: 40
+  bm25_topk: 40
+  query_channel_weights:
+    user: 0.5
+    assistant: 0.25
+    full: 0.25
+  use_turn_embedding: true
+  turn_score_topk: 2
+  message_weight_user: 0.7
+  message_weight_assistant: 0.3
+  pre_fusion_weight_embedding: 1.0
+  pre_fusion_weight_bm25: 0.65
+
+reranker:
+  enabled: true
+  # cross_encoder | huggingface_api | none
+  backend: "cross_encoder"
+  model_name: "BAAI/bge-reranker-base"
+  batch_size: 1
+  pre_topn: 20
+  hybrid_alpha: 0.3
+  api_url: ""
+  api_token_env: ""
+  api_timeout_sec: 60.0
+
+dataset:
+  exclude_abstention: false
+  # Map canonical field names to source JSON paths (dot-separated for nesting).
+  # Empty mappings keep the existing LongMemEval/PersonaMem field names.
+  field_mapping:
+    segment: {}
+    message: {}
+    question: {}
+  # For example: {human: user, bot: assistant}
+  role_mapping: {}

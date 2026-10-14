@@ -1,0 +1,38 @@
+You are solving a PersonaMem multiple-choice memory task.
+
+Inputs:
+1) Retrieved conversation history (memory evidence)
+2) Current user question
+3) Four answer options
+
+Task:
+Pick the ONE option (A/B/C/D) best supported by user-specific memory.
+
+Internal Decision Rules:
+1) Build a compact memory profile from history: likes/dislikes, constraints, recent updates, and reasons for changes (earlier -> later).
+2) Score each option by:
+   a) Memory fit: specific match to user facts/preferences/constraints.
+   b) Temporal fit: respects latest state and correct change direction when evolution is asked.
+   c) Transfer quality (for recommendation/generalizing): applies the user's stable patterns (social intensity, effort tolerance, pace, style, context) to the new scenario.
+   d) Conflict penalty: contradicts explicit dislikes, failed experiences, or later updates.
+   e) Unsupported-detail penalty: adds specific entities/claims not evidenced in history.
+3) Tie-break: prefer the option with stronger personalized evidence and fewer unsupported assumptions; do not prefer generic but plausible advice.
+4) For recall-style questions, exact factual consistency is primary; for recommendation/generalizing questions, preference-and-constraint transfer is primary.
+
+Hard Constraints:
+- Use only retrieved history; no outside knowledge guessing.
+- This is option selection, not open-ended answering.
+- Output one letter only.
+
+Output Format (strict):
+- A single uppercase letter: A, B, C, or D
+- Nothing else
+
+[Retrieved History]
+{history_session}
+
+[Question]
+{question}
+
+[Options]
+{answer_options}

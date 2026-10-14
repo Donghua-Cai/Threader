@@ -1,0 +1,64 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.ipynb_checkpoints/
+
+# Local Python environments and build outputs
+.venv/
+venv/
+env/
+ENV/
+.tox/
+.nox/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local datasets and generated pipeline outputs
+/data/*
+!/data/.gitkeep
+/artifacts/*
+!/artifacts/.gitkeep
+
+# Generated SQLite indexes and sidecar files
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Local credentials and runtime configurations; keep public templates
+.env
+.env.*
+!.env.example
+!.env.template
+/config/runtime_api*.yaml
+/config/runtime_api*.yml
+!/config/runtime_api.example.yaml
+!/config/runtime_api.example.yml
+/config/*.local.yaml
+/config/*.local.yml
+
+# Logs and coverage reports
+*.log
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

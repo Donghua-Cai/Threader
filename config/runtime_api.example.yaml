@@ -1,0 +1,32 @@
+# Do not put real keys in the public repo. Prefer environment variables:
+#   OPENAI_API_KEY / OPENAI_BASE_URL
+#   RESPONSE_API_KEY / RESPONSE_BASE_URL
+#   JUDGE_API_KEY / JUDGE_BASE_URL
+openai:
+  default:
+    api_key: ""
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-5-mini"
+  response:
+    api_key: ""
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-5-mini"
+  judge:
+    api_key: ""
+    base_url: "https://api.openai.com/v1"
+    model: "gpt-4.1-mini"
+
+# Optional retrieval-model HTTP endpoints. Prefer environment variables instead of
+# hard-coding tokens:
+#   EMBEDDING_API_URL / EMBEDDING_API_TOKEN
+#   RERANKER_API_URL / RERANKER_API_TOKEN
+#   HF_API_TOKEN or HF_TOKEN
+retrieval_api_examples:
+  embedding:
+    backend: "openai_compatible"
+    api_url: "https://your-embedding-host/v1/embeddings"
+    api_token_env: "EMBEDDING_API_TOKEN"
+  reranker:
+    backend: "huggingface_api"
+    api_url: "https://your-reranker-host/rerank"
+    api_token_env: "RERANKER_API_TOKEN"
